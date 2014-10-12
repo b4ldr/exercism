@@ -1,12 +1,10 @@
 class Complement
-  attr_accessor :dna_to_rna 
-  attr_accessor :rna_to_dna 
-  @dna_to_rna = { 'A' => 'U', 'C' => 'G', 'G' => 'C', 'T' => 'A' }  
-  @rna_to_dna = { 'A' => 'T', 'C' => 'G', 'G' => 'C', 'U' => 'A' }  
+  DNA_TO_RNA = { 'A' => 'U', 'C' => 'G', 'G' => 'C', 'T' => 'A' }  
+  RNA_TO_DNA = DNA_TO_RNA.invert
   def self.of_dna(strand)
-    strand.chars.map { |c| @dna_to_rna[c] }.join
+    strand.chars.map { |c| DNA_TO_RNA[c] }.join
   end
   def self.of_rna(strand)
-    strand.chars.map { |c| @rna_to_dna[c] }.join
+    strand.chars.map { |c| RNA_TO_DNA[c] }.join
   end
 end

@@ -3,6 +3,6 @@ class Grains
     2**(number-1)
   end
   def total(size=64)
-    (1..size).inject { |sum, n| sum + square(n) }
+    2**size-1
   end
 end
